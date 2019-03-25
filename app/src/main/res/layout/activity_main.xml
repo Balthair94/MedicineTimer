@@ -5,15 +5,143 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".MainActivity">
 
     <TextView
+            android:id="@+id/text_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/main_message_time_left"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/text_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_zero"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/text_dots_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_two_dots"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/text_minutes"
+            app:layout_constraintBottom_toBottomOf="@+id/text_minutes"
+            app:layout_constraintTop_toTopOf="@+id/text_minutes"/>
+
+    <TextView
+            android:id="@+id/text_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_zero"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/text_dots_one"
+            app:layout_constraintBottom_toBottomOf="@+id/text_minutes"
+            app:layout_constraintTop_toTopOf="@+id/text_minutes"/>
+
+    <TextView
+            android:id="@+id/text_dots_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_two_dots"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/text_minutes"
+            app:layout_constraintTop_toTopOf="@+id/text_minutes"
+            app:layout_constraintBottom_toBottomOf="@+id/text_minutes"/>
+
+    <TextView
+            android:id="@+id/text_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_zero"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:textSize="30sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/text_dots_two"
+            app:layout_constraintTop_toTopOf="@+id/text_minutes"
+            app:layout_constraintBottom_toBottomOf="@+id/text_minutes"/>
+
+    <ImageButton
+            android:id="@+id/button_add_hours"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/button_add"
+            android:background="@null"
+            android:contentDescription="@string/main_button_add_content_description"
+            app:layout_constraintBottom_toTopOf="@+id/text_hours"
+            app:layout_constraintEnd_toEndOf="@+id/text_hours"
+            app:layout_constraintStart_toStartOf="@+id/text_hours"/>
+
+    <ImageButton
+            android:id="@+id/button_remove_hours"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/button_reduce"
+            android:background="@null"
+            android:contentDescription="@string/main_button_remove_content_description"
+            app:layout_constraintTop_toBottomOf="@+id/text_hours"
+            app:layout_constraintEnd_toEndOf="@+id/text_hours"
+            app:layout_constraintStart_toStartOf="@+id/text_hours"/>
+
+    <ImageButton
+            android:id="@+id/button_add_minutes"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/button_add"
+            android:background="@null"
+            android:contentDescription="@string/main_button_add_content_description"
+            app:layout_constraintBottom_toTopOf="@+id/text_minutes"
+            app:layout_constraintEnd_toEndOf="@+id/text_minutes"
+            app:layout_constraintStart_toStartOf="@+id/text_minutes"/>
+
+    <ImageButton
+            android:id="@+id/button_remove_minutes"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/button_reduce"
+            android:background="@null"
+            android:contentDescription="@string/main_button_remove_content_description"
+            app:layout_constraintTop_toBottomOf="@+id/text_minutes"
+            app:layout_constraintEnd_toEndOf="@+id/text_minutes"
+            app:layout_constraintStart_toStartOf="@+id/text_minutes"/>
+
+    <Button
+            android:id="@+id/button_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/main_start"
+            android:textColor="@color/color_blue"
+            android:layout_marginBottom="16dp"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

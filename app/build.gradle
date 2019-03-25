@@ -35,4 +35,6 @@ dependencies {
     implementation 'org.koin:koin-android:1.0.2'
 
     implementation "android.arch.work:work-runtime-ktx:1.0.0"
+
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
